@@ -3,123 +3,212 @@
 
 body {
   height: 100vh;
-  background-image: url(../assets/background.jpg);
+  background-image: url(../assets/mainbackground.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
   position: relative;
+  display: flex;
+
+  justify-content: center;
 
 
-
-
-  .score{
+  .main-game {
+    width: 1000px;
+    height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content:center;
-    width: 15vw;
-    height: 10vh;
-    background-color: rgba(100, 138, 100, 0.68);
-    border-radius: 50%;
-    font-size: 25px;
-    font-weight: 700;
+    //background-image: url(../assets/mainbackground.png);
+    align-items: flex-end;
+    justify-content: center;
 
-  }
+    .troll {
+      height: 900px;
+      width: 900px;
+      border: 5px solid red;
+      background-image: url(../assets/troll/walk/WALK000.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
 
-  .viewfinder {
-    position: absolute;
-    width: 3vw;
-    height: 3vw;
-    background-color: #570b0b;
-    animation: move 4s infinite linear alternate, moveTwo 4s infinite alternate;
-  }
 
-  .btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    font-size: 40px;
-    font-family: sans-serif;
-    border-radius: 30px;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #77b977;
     }
 
-    &:hover + div {
-        animation-play-state: paused;
+    .score {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 2.5rem;
+      left: 13rem;
+      padding: 10px;
+
+      width: 450px;
+      height: 200px;
+
+
+      background-image: url(../assets/score.png);
+      background-size: 120%;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      font-size: 35px;
+      font-weight: 700;
+
+      .score-number {
+        margin-top: 10px;
+        width: 150px;
+        height: 80px;
+        border: 5px solid red;
       }
+      .info{
+        padding-top: 40px;
+        font-size: 16px;
+        font-weight: 300;
+        color: #a96a13;
+
+      }
+
+    }
+
+    .viewfinder {
+      position: absolute;
+      width: 3vw;
+      height: 3vw;
+      background-color: #570b0b;
+      //animation: move 4s infinite linear alternate, moveTwo 4s infinite alternate;
+    }
+
+    .btn {
+
+      font-size: 40px;
+      font-family: sans-serif;
+      border-radius: 30px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #77b977;
+      }
+    }
+
+    .start {
+      height: 80px;
+      width: 200px;
+      background-image: url(../assets/start.png);
+      background-size: 120%;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: fixed;
+      bottom: 230px;
+      right: 200px;
+
+    }
+
+    .shot {
+      height: 80px;
+      width: 200px;
+      background-image: url(../assets/start.png);
+      background-size: 120%;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: fixed;
+      bottom: 130px;
+      right: 200px;
+
+
+      &:hover {
+        background-image: url(../assets/stop.png);
+      }
+    }
+
+    .stop {
+      height: 80px;
+      width: 200px;
+      background-image: url(../assets/stop.png);
+      background-size: 120%;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: fixed;
+      bottom: 30px;
+      right: 200px;
+    }
+
+    ///*TARCZA*/
+
+
+    //.fife {
+    //  position: absolute;
+    //  width: 43vw;
+    //  height: 45vh;
+    //  border-radius: 50%;
+    //  background-color: rgba(255, 0, 0, 0.4);
+    //  top: 35%;
+    //  right: 28.5%;
+    //
+    //
+    //  .six {
+    //    position: absolute;
+    //    width: 35vw;
+    //    height: 37vh;
+    //    border-radius: 50%;
+    //    background-color: rgba(255, 98, 0, 0.58);
+    //    top: 8.5%;
+    //    right: 9.5%;
+    //  }
+    //
+    //
+    //  .seven {
+    //    position: absolute;
+    //    width: 27vw;
+    //    height: 27vh;
+    //    border-radius: 50%;
+    //    background-color: rgba(232, 208, 43, 0.58);
+    //    top: 12.5%;
+    //    right: 12%;
+    //  }
+    //
+    //  .eight {
+    //    position: absolute;
+    //    width: 19vw;
+    //    height: 19vh;
+    //    border-radius: 50%;
+    //    background-color: rgba(147, 232, 43, 0.58);
+    //    top: 15.5%;
+    //    right: 13%;
+    //  }
+    //
+    //
+    //  .nine {
+    //    position: absolute;
+    //    width: 11vw;
+    //    height: 11vh;
+    //    border-radius: 50%;
+    //    background-color: rgba(8, 227, 131, 0.58);
+    //    top: 20%;
+    //    right: 22%;
+    //  }
+    //
+    //  .ten{
+    //    width: 4vw;
+    //    height:4vw;
+    //    border-radius: 50%;
+    //    background-color: red;
+    //    position: absolute;
+    //    top:34%;
+    //    right: 32%;
+    //  }
+    //
+    //
+    //
+    //
+    //
+    //}
+
   }
 
-  ///*TARCZA*/
-
-
-  .fife {
-    position: absolute;
-    width: 43vw;
-    height: 45vh;
-    border-radius: 50%;
-    background-color: rgba(255, 0, 0, 0.4);
-    top: 35%;
-    right: 28.5%;
-
-
-    .six {
-      position: absolute;
-      width: 35vw;
-      height: 37vh;
-      border-radius: 50%;
-      background-color: rgba(255, 98, 0, 0.58);
-      top: 8.5%;
-      right: 9.5%;
-    }
-
-
-    .seven {
-      position: absolute;
-      width: 27vw;
-      height: 27vh;
-      border-radius: 50%;
-      background-color: rgba(232, 208, 43, 0.58);
-      top: 12.5%;
-      right: 12%;
-    }
-
-    .eight {
-      position: absolute;
-      width: 19vw;
-      height: 19vh;
-      border-radius: 50%;
-      background-color: rgba(147, 232, 43, 0.58);
-      top: 15.5%;
-      right: 13%;
-    }
-
-
-    .nine {
-      position: absolute;
-      width: 11vw;
-      height: 11vh;
-      border-radius: 50%;
-      background-color: rgba(8, 227, 131, 0.58);
-      top: 20%;
-      right: 22%;
-    }
-
-    .ten{
-      width: 4vw;
-      height:4vw;
-      border-radius: 50%;
-      background-color: red;
-      position: absolute;
-      top:34%;
-      right: 32%;
-    }
-
-
-
-
+  footer{
+    border: 5px solid red;
 
   }
 
@@ -192,6 +281,224 @@ body {
   }
   100% {
     transform: translate(-10vh, 10vh);
+  }
+
+}
+
+@keyframes trollBasic {
+  0% {
+    background-image: url(../assets/troll/walk/WALK000.png);
+  }
+  2% {
+    background-image: url(../assets/troll/walk/WALK001.png);
+  }
+  4% {
+    background-image: url(../assets/troll/walk/WALK002.png);
+  }
+  6% {
+    background-image: url(../assets/troll/walk/WALK003.png);
+  }
+  8% {
+    background-image: url(../assets/troll/walk/WALK004.png);
+  }
+  10% {
+    background-image: url(../assets/troll/walk/WALK005.png);
+  }
+  12% {
+    background-image: url(../assets/troll/walk/WALK006.png);
+  }
+  14% {
+    background-image: url(../assets/troll/walk/WALK007.png);
+  }
+  16% {
+    background-image: url(../assets/troll/walk/WALK008.png);
+  }
+  18% {
+    background-image: url(../assets/troll/walk/WALK009.png);
+  }
+  20% {
+    background-image: url(../assets/troll/run/RUN000.png);
+  }
+  22% {
+    background-image: url(../assets/troll/run/RUN001.png);
+  }
+  24% {
+    background-image: url(../assets/troll/run/RUN002.png);
+  }
+  26% {
+    background-image: url(../assets/troll/run/RUN003.png);
+  }
+  28% {
+    background-image: url(../assets/troll/run/RUN004.png);
+  }
+  30% {
+    background-image: url(../assets/troll/run/RUN005.png);
+  }
+  32% {
+    background-image: url(../assets/troll/run/RUN006.png);
+  }
+  34% {
+    background-image: url(../assets/troll/run/RUN007.png);
+  }
+  36% {
+    background-image: url(../assets/troll/run/RUN008.png);
+  }
+  38% {
+    background-image: url(../assets/troll/run/RUN009.png);
+  }
+  40% {
+    background-image: url(../assets/troll/attack/ATTACK000.png);
+  }
+  42% {
+    background-image: url(../assets/troll/attack/ATTACK001.png);
+  }
+  44% {
+    background-image: url(../assets/troll/attack/ATTACK002.png);
+  }
+  46% {
+    background-image: url(../assets/troll/attack/ATTACK003.png);
+  }
+  48% {
+    background-image: url(../assets/troll/attack/ATTACK004.png);
+  }
+  50% {
+    background-image: url(../assets/troll/attack/ATTACK005.png);
+  }
+  52% {
+    background-image: url(../assets/troll/attack/ATTACK006.png);
+  }
+  54% {
+    background-image: url(../assets/troll/attack/ATTACK007.png);
+  }
+  56% {
+    background-image: url(../assets/troll/attack/ATTACK008.png);
+  }
+  58% {
+    background-image: url(../assets/troll/attack/ATTACK009.png);
+  }
+  60% {
+    background-image: url(../assets/troll/jump/JUMP000.png);
+  }
+  62% {
+    background-image: url(../assets/troll/jump/JUMP001.png);
+  }
+  64% {
+    background-image: url(../assets/troll/jump/JUMP002.png);
+  }
+  66% {
+    background-image: url(../assets/troll/jump/JUMP003.png);
+  }
+  68% {
+    background-image: url(../assets/troll/jump/JUMP004.png);
+  }
+  70% {
+    background-image: url(../assets/troll/jump/JUMP005.png);
+  }
+  72% {
+    background-image: url(../assets/troll/jump/JUMP006.png);
+  }
+  74% {
+    background-image: url(../assets/troll/jump/JUMP007.png);
+  }
+  76% {
+    background-image: url(../assets/troll/jump/JUMP008.png);
+  }
+  78% {
+    background-image: url(../assets/troll/jump/JUMP009.png);
+  }
+  80% {
+    background-image: url(../assets/troll/idle/IDLE000.png);
+  }
+  82% {
+    background-image: url(../assets/troll/idle/IDLE001.png);
+  }
+  84% {
+    background-image: url(../assets/troll/idle/IDLE002.png);
+  }
+  86% {
+    background-image: url(../assets/troll/idle/IDLE003.png);
+  }
+  88% {
+    background-image: url(../assets/troll/idle/IDLE004.png);
+  }
+  92% {
+    background-image: url(../assets/troll/idle/IDLE005.png);
+  }
+  94% {
+    background-image: url(../assets/troll/idle/IDLE006.png);
+  }
+  96% {
+    background-image: url(../assets/troll/idle/IDLE007.png);
+  }
+  98% {
+    background-image: url(../assets/troll/idle/IDLE008.png);
+  }
+  100% {
+    background-image: url(../assets/troll/idle/IDLE009.png);
+  }
+}
+
+
+@keyframes trollDie {
+  0% {
+    background-image: url(../assets/troll/hurt/HURT000.png);
+  }
+  5% {
+    background-image: url(../assets/troll/hurt/HURT001.png);
+  }
+  10% {
+    background-image: url(../assets/troll/hurt/HURT002.png);
+  }
+  15% {
+    background-image: url(../assets/troll/hurt/HURT003.png);
+  }
+  20% {
+    background-image: url(../assets/troll/hurt/HURT004.png);
+  }
+  25% {
+    background-image: url(../assets/troll/hurt/HURT005.png);
+  }
+  30% {
+    background-image: url(../assets/troll/hurt/HURT006.png);
+  }
+  35% {
+    background-image: url(../assets/troll/hurt/HURT007.png);
+  }
+  40% {
+    background-image: url(../assets/troll/hurt/HURT008.png);
+  }
+  45% {
+    background-image: url(../assets/troll/hurt/HURT009.png);
+  }
+  50% {
+    background-image: url(../assets/troll/die/DIE000.png);
+  }
+  60% {
+    background-image: url(../assets/troll/die/DIE001.png);
+  }
+  65% {
+    background-image: url(../assets/troll/die/DIE002.png);
+  }
+  70% {
+    background-image: url(../assets/troll/die/DIE003.png);
+  }
+  75% {
+    background-image: url(../assets/troll/die/DIE004.png);
+  }
+  80% {
+    background-image: url(../assets/troll/die/DIE005.png);
+  }
+  85% {
+    background-image: url(../assets/troll/die/DIE006.png);
+  }
+  90% {
+    background-image: url(../assets/troll/die/DIE007.png);
+  }
+  95% {
+    background-image: url(../assets/troll/die/DIE008.png);
+  }
+  100% {
+    background-image: url(../assets/troll/die/DIE009.png);
   }
 
 }
