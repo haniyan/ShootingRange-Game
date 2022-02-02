@@ -1,0 +1,303 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  style: none;
+}
+
+body {
+  height: 100vh;
+  background-image: url(../assets/background.jpg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
+}
+body .score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15vw;
+  height: 10vh;
+  background-color: rgba(100, 138, 100, 0.68);
+  border-radius: 50%;
+  font-size: 25px;
+  font-weight: 700;
+}
+body .viewfinder {
+  position: absolute;
+  width: 3vw;
+  height: 3vw;
+  background-color: #570b0b;
+  -webkit-animation: move 4s infinite linear alternate, moveTwo 4s infinite alternate;
+          animation: move 4s infinite linear alternate, moveTwo 4s infinite alternate;
+}
+body .btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 40px;
+  font-family: sans-serif;
+  border-radius: 30px;
+  cursor: pointer;
+}
+body .btn:hover {
+  background-color: #77b977;
+}
+body .btn:hover + div {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+body .fife {
+  position: absolute;
+  width: 43vw;
+  height: 45vh;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.4);
+  top: 35%;
+  right: 28.5%;
+}
+body .fife .six {
+  position: absolute;
+  width: 35vw;
+  height: 37vh;
+  border-radius: 50%;
+  background-color: rgba(255, 98, 0, 0.58);
+  top: 8.5%;
+  right: 9.5%;
+}
+body .fife .seven {
+  position: absolute;
+  width: 27vw;
+  height: 27vh;
+  border-radius: 50%;
+  background-color: rgba(232, 208, 43, 0.58);
+  top: 12.5%;
+  right: 12%;
+}
+body .fife .eight {
+  position: absolute;
+  width: 19vw;
+  height: 19vh;
+  border-radius: 50%;
+  background-color: rgba(147, 232, 43, 0.58);
+  top: 15.5%;
+  right: 13%;
+}
+body .fife .nine {
+  position: absolute;
+  width: 11vw;
+  height: 11vh;
+  border-radius: 50%;
+  background-color: rgba(8, 227, 131, 0.58);
+  top: 20%;
+  right: 22%;
+}
+body .fife .ten {
+  width: 4vw;
+  height: 4vw;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  top: 34%;
+  right: 32%;
+}
+
+@-webkit-keyframes move {
+  0% {
+    top: 20%;
+    left: 20%;
+  }
+  10% {
+    top: 52%;
+    left: 17%;
+  }
+  15% {
+    top: 34%;
+    left: 62%;
+  }
+  20% {
+    top: 44%;
+    left: 10%;
+  }
+  30% {
+    top: 24%;
+    left: 20%;
+  }
+  40% {
+    top: 54%;
+    left: 66%;
+  }
+  50% {
+    top: 24%;
+    left: 15%;
+  }
+  60% {
+    top: 42%;
+    left: 33%;
+  }
+  70% {
+    top: 44%;
+    left: 50%;
+  }
+  90% {
+    top: 35%;
+    left: 45%;
+  }
+  100% {
+    top: 60%;
+    left: 10%;
+  }
+}
+
+@keyframes move {
+  0% {
+    top: 20%;
+    left: 20%;
+  }
+  10% {
+    top: 52%;
+    left: 17%;
+  }
+  15% {
+    top: 34%;
+    left: 62%;
+  }
+  20% {
+    top: 44%;
+    left: 10%;
+  }
+  30% {
+    top: 24%;
+    left: 20%;
+  }
+  40% {
+    top: 54%;
+    left: 66%;
+  }
+  50% {
+    top: 24%;
+    left: 15%;
+  }
+  60% {
+    top: 42%;
+    left: 33%;
+  }
+  70% {
+    top: 44%;
+    left: 50%;
+  }
+  90% {
+    top: 35%;
+    left: 45%;
+  }
+  100% {
+    top: 60%;
+    left: 10%;
+  }
+}
+@-webkit-keyframes moveTwo {
+  0% {
+    transform: translate(10vh, -10vh);
+  }
+  20% {
+    transform: translate(3vh, 10vh);
+  }
+  40% {
+    transform: translate(17vh, 22vh);
+  }
+  60% {
+    transform: translate(7vh, 2vh);
+  }
+  80% {
+    transform: translate(22vh, 8vh);
+  }
+  100% {
+    transform: translate(-10vh, 10vh);
+  }
+}
+@keyframes moveTwo {
+  0% {
+    transform: translate(10vh, -10vh);
+  }
+  20% {
+    transform: translate(3vh, 10vh);
+  }
+  40% {
+    transform: translate(17vh, 22vh);
+  }
+  60% {
+    transform: translate(7vh, 2vh);
+  }
+  80% {
+    transform: translate(22vh, 8vh);
+  }
+  100% {
+    transform: translate(-10vh, 10vh);
+  }
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,197 @@
+// adding reset
+@import "reset";
+
+body {
+  height: 100vh;
+  background-image: url(../assets/background.jpg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
+
+
+
+
+  .score{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width: 15vw;
+    height: 10vh;
+    background-color: rgba(100, 138, 100, 0.68);
+    border-radius: 50%;
+    font-size: 25px;
+    font-weight: 700;
+
+  }
+
+  .viewfinder {
+    position: absolute;
+    width: 3vw;
+    height: 3vw;
+    background-color: #570b0b;
+    animation: move 4s infinite linear alternate, moveTwo 4s infinite alternate;
+  }
+
+  .btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    font-size: 40px;
+    font-family: sans-serif;
+    border-radius: 30px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #77b977;
+    }
+
+    &:hover + div {
+        animation-play-state: paused;
+      }
+  }
+
+  ///*TARCZA*/
+
+
+  .fife {
+    position: absolute;
+    width: 43vw;
+    height: 45vh;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.4);
+    top: 35%;
+    right: 28.5%;
+
+
+    .six {
+      position: absolute;
+      width: 35vw;
+      height: 37vh;
+      border-radius: 50%;
+      background-color: rgba(255, 98, 0, 0.58);
+      top: 8.5%;
+      right: 9.5%;
+    }
+
+
+    .seven {
+      position: absolute;
+      width: 27vw;
+      height: 27vh;
+      border-radius: 50%;
+      background-color: rgba(232, 208, 43, 0.58);
+      top: 12.5%;
+      right: 12%;
+    }
+
+    .eight {
+      position: absolute;
+      width: 19vw;
+      height: 19vh;
+      border-radius: 50%;
+      background-color: rgba(147, 232, 43, 0.58);
+      top: 15.5%;
+      right: 13%;
+    }
+
+
+    .nine {
+      position: absolute;
+      width: 11vw;
+      height: 11vh;
+      border-radius: 50%;
+      background-color: rgba(8, 227, 131, 0.58);
+      top: 20%;
+      right: 22%;
+    }
+
+    .ten{
+      width: 4vw;
+      height:4vw;
+      border-radius: 50%;
+      background-color: red;
+      position: absolute;
+      top:34%;
+      right: 32%;
+    }
+
+
+
+
+
+  }
+
+}
+
+
+@keyframes move {
+  0% {
+    top: 20%;
+    left: 20%;
+  }
+  10% {
+    top: 52%;
+    left: 17%;
+  }
+  15% {
+    top: 34%;
+    left: 62%;
+  }
+  20% {
+    top: 44%;
+    left: 10%;
+  }
+  30% {
+    top: 24%;
+    left: 20%;
+  }
+  40% {
+    top: 54%;
+    left: 66%;
+  }
+  50% {
+    top: 24%;
+    left: 15%;
+  }
+  60% {
+    top: 42%;
+    left: 33%;
+  }
+  70% {
+    top: 44%;
+    left: 50%;
+  }
+  90% {
+    top: 35%;
+    left: 45%;
+  }
+  100% {
+    top: 60%;
+    left: 10%;
+  }
+}
+
+@keyframes moveTwo {
+
+  0% {
+    transform: translate(10vh, -10vh);
+  }
+  20% {
+    transform: translate(3vh, 10vh);
+  }
+  40% {
+    transform: translate(17vh, 22vh);
+  }
+  60% {
+    transform: translate(7vh, 2vh);
+  }
+  80% {
+    transform: translate(22vh, 8vh);
+  }
+  100% {
+    transform: translate(-10vh, 10vh);
+  }
+
+}
