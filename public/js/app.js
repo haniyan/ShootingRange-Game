@@ -60,6 +60,7 @@ function shotPosition (){
     }
     troll.style.animation = "trollDie 2s infinite linear alternate";
 
+
 }
 
 function trollMoves(){
@@ -79,4 +80,6 @@ stopBtn.addEventListener("click", ()=>{
 
 shotBtn.addEventListener("click", shotPosition)
 
-// troll.style.animation = "trollJump 0.5s infinite linear alternate";
+
+//trzeba znaleźć dobrą pozycję gdzie to wrzucić
+// viewfinder.style.animation = "weaponRotate 0.2s infinite linear alternate";

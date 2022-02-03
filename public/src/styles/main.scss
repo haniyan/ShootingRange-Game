@@ -25,11 +25,85 @@ body {
     .troll {
       height: 900px;
       width: 900px;
-      border: 5px solid red;
       background-image: url(../assets/troll/walk/WALK000.png);
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      border: 1px solid red;
+
+      .col-1 {
+        margin-left: 7%;
+        height: 100%;
+        width: 35%;
+        border: 2px solid green;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .arm {
+          margin-top: 75%;
+          height: 300px;
+          width: 200px;
+          border: 3px solid red;
+
+        }
+
+      }
+
+      .col-2 {
+        padding-top: 25%;
+        height: 100%;
+        width: 26%;
+        border: 2px solid green;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .head {
+          height: 180px;
+
+          border: 3px solid red;
+        }
+
+        .belly {
+          height: 200px;
+
+          border: 3px solid red;
+
+
+        }
+
+        .leg {
+          height: 100px;
+
+          border: 3px solid red;
+
+        }
+
+      }
+
+      .col-3 {
+        height: 100%;
+        width: 35%;
+        border: 2px solid green;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .arm {
+          margin-top: 85%;
+          height: 250px;
+          width: 150px;
+          border: 3px solid red;
+
+        }
+      }
 
 
     }
@@ -62,7 +136,8 @@ body {
         height: 80px;
         border: 5px solid red;
       }
-      .info{
+
+      .info {
         padding-top: 40px;
         font-size: 16px;
         font-weight: 300;
@@ -74,9 +149,12 @@ body {
 
     .viewfinder {
       position: absolute;
-      width: 3vw;
-      height: 3vw;
-      background-color: #570b0b;
+      width: 140px;
+      height: 280px;
+      background-image: url(../assets/bron.png);
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
       //animation: move 4s infinite linear alternate, moveTwo 4s infinite alternate;
     }
 
@@ -134,83 +212,9 @@ body {
       right: 200px;
     }
 
-    ///*TARCZA*/
-
-
-    //.fife {
-    //  position: absolute;
-    //  width: 43vw;
-    //  height: 45vh;
-    //  border-radius: 50%;
-    //  background-color: rgba(255, 0, 0, 0.4);
-    //  top: 35%;
-    //  right: 28.5%;
-    //
-    //
-    //  .six {
-    //    position: absolute;
-    //    width: 35vw;
-    //    height: 37vh;
-    //    border-radius: 50%;
-    //    background-color: rgba(255, 98, 0, 0.58);
-    //    top: 8.5%;
-    //    right: 9.5%;
-    //  }
-    //
-    //
-    //  .seven {
-    //    position: absolute;
-    //    width: 27vw;
-    //    height: 27vh;
-    //    border-radius: 50%;
-    //    background-color: rgba(232, 208, 43, 0.58);
-    //    top: 12.5%;
-    //    right: 12%;
-    //  }
-    //
-    //  .eight {
-    //    position: absolute;
-    //    width: 19vw;
-    //    height: 19vh;
-    //    border-radius: 50%;
-    //    background-color: rgba(147, 232, 43, 0.58);
-    //    top: 15.5%;
-    //    right: 13%;
-    //  }
-    //
-    //
-    //  .nine {
-    //    position: absolute;
-    //    width: 11vw;
-    //    height: 11vh;
-    //    border-radius: 50%;
-    //    background-color: rgba(8, 227, 131, 0.58);
-    //    top: 20%;
-    //    right: 22%;
-    //  }
-    //
-    //  .ten{
-    //    width: 4vw;
-    //    height:4vw;
-    //    border-radius: 50%;
-    //    background-color: red;
-    //    position: absolute;
-    //    top:34%;
-    //    right: 32%;
-    //  }
-    //
-    //
-    //
-    //
-    //
-    //}
 
   }
 
-  footer{
-    border: 5px solid red;
-
-  }
 
 }
 
@@ -438,7 +442,6 @@ body {
   }
 }
 
-
 @keyframes trollDie {
   0% {
     background-image: url(../assets/troll/hurt/HURT000.png);
@@ -500,5 +503,16 @@ body {
   100% {
     background-image: url(../assets/troll/die/DIE009.png);
   }
+
+}
+
+@keyframes weaponRotate {
+  0% {
+    transform: rotate(-25deg);
+  }
+  100% {
+    transform: rotate(-45deg);
+  }
+
 
 }
