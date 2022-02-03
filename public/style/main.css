@@ -167,10 +167,10 @@ body .main-game .score {
   font-weight: 700;
 }
 body .main-game .score .score-number {
-  margin-top: 10px;
+  margin-top: 10%;
   width: 150px;
   height: 80px;
-  border: 5px solid red;
+  text-align: center;
 }
 body .main-game .score .info {
   padding-top: 40px;
@@ -181,11 +181,12 @@ body .main-game .score .info {
 body .main-game .viewfinder {
   position: absolute;
   width: 140px;
-  height: 280px;
+  height: 160px;
   background-image: url(../assets/bron.png);
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
+  border: 2px solid #77b977;
 }
 body .main-game .btn {
   font-size: 40px;
