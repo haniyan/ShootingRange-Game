@@ -70,7 +70,6 @@ button {
 
 body {
   height: 100vh;
-  background-image: url(../assets/mainbackground.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -96,13 +95,11 @@ body .main-game .troll {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border: 1px solid red;
 }
 body .main-game .troll .col-1 {
   margin-left: 7%;
   height: 100%;
   width: 35%;
-  border: 2px solid green;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -117,7 +114,6 @@ body .main-game .troll .col-2 {
   padding-top: 25%;
   height: 100%;
   width: 26%;
-  border: 2px solid green;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -137,7 +133,6 @@ body .main-game .troll .col-2 .leg {
 body .main-game .troll .col-3 {
   height: 100%;
   width: 35%;
-  border: 2px solid green;
   display: flex;
   justify-content: flex-start;
   align-items: center;

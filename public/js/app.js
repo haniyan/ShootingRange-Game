@@ -15,8 +15,6 @@ const rightArmHitBox = document.querySelector(".arm-right");
 console.log(headHitBox.offsetTop)
 
 const viewfinderPosition = {
-    left:,
-    right:,
     width: 140,
     height: 160,
 }
@@ -54,32 +52,77 @@ const rightArmHitBoxPosition = {
 
 let score = 0;
 
+console.log(headHitBoxPosition.top, bellyHitBoxPosition.top)
 function shotPosition() {
 
+    //position in the moment of function call
+    let currentX = viewfinder.offsetLeft;
+    let currentY = viewfinder.offsetTop;
+    let currentHeight = viewfinder.offsetTop - viewfinderPosition.height;
+    let currentWidth = viewfinder.offsetLeft + viewfinderPosition.width;
 
-    let currentPositionX = viewfinder.offsetLeft;
-    let currentPositionY = viewfinder.offsetTop;
+    console.log(currentX, currentY)
+    //head - collision detect
+    if (currentX < headHitBoxPosition.left + headHitBoxPosition.width && currentX > headHitBoxPosition.left
+        && currentY < headHitBoxPosition.top + headHitBoxPosition.height && currentY > headHitBoxPosition.top) {
 
-    console.log(currentPositionX, currentPositionY)
-
-
-    if (currentPositionX >= 0 && currentPositionX <= 1000 && currentPositionY >= 0 && currentPositionY <= 1000) {
-        console.log("+10 pkt");
-        score = score + 10;
+        score = score + 20;
         scoreNumberBox.innerHTML = `${score}`;
 
-    } else {
+        console.log("head");
+
+
+    }
+    //belly
+
+    else if (currentX < bellyHitBoxPosition.left + bellyHitBoxPosition.width && currentX > bellyHitBoxPosition.left
+        && currentY < bellyHitBoxPosition.top + bellyHitBoxPosition.height && currentY > bellyHitBoxPosition.top) {
+
+        score = score + 5;
+        scoreNumberBox.innerHTML = `${score}`;
+
+        console.log("belly");
+    }
+    //leg
+
+    else if (currentX < legHitBoxPosition.left + legHitBoxPosition.width && currentX > legHitBoxPosition.left
+        && currentY < legHitBoxPosition.top + legHitBoxPosition.height && currentY > legHitBoxPosition.top) {
+
+        score = score + 10;
+        scoreNumberBox.innerHTML = `${score}`;
+        console.log("leg");
+    }
+    //leftarm
+    else if (currentX < leftArmHitBoxPosition.left + leftArmHitBoxPosition.width && currentX > leftArmHitBoxPosition.left
+        && currentY < leftArmHitBoxPosition.top + leftArmHitBoxPosition.height && currentY > leftArmHitBoxPosition.top) {
+
+        score = score + 7;
+        scoreNumberBox.innerHTML = `${score}`;
+        console.log("leftarm");
+    }
+    //rightarm
+    else if(currentX < rightArmHitBoxPosition.left + rightArmHitBoxPosition.width && currentX > rightArmHitBoxPosition.left
+        && currentY < rightArmHitBoxPosition.top + rightArmHitBoxPosition.height && currentY > rightArmHitBoxPosition.top){
+
+        score = score + 7;
+        scoreNumberBox.innerHTML = `${score}`;
+        console.log("rightarm");
+    }
+    else {
         console.log("looser");
     }
-    troll.style.animation = "trollDie 2s infinite linear alternate";
 
 
 }
 
+function TrollIsDead() {
+    troll.style.animation = "trollDie 2s infinite linear alternate";
+}
+
 
 startBtn.addEventListener("click", () => {
-    viewfinder.style.animation = "move 8s infinite linear alternate, moveTwo 8s infinite alternate"
-    troll.style.animation = "trollBasic 3s infinite linear alternate"
+    viewfinder.style.animation = "move 10s infinite linear alternate, moveTwo 10s infinite alternate"
+    // troll.style.animation = "trollBasic 8s infinite linear alternate"
 })
 
 stopBtn.addEventListener("click", () => {
@@ -91,4 +134,4 @@ shotBtn.addEventListener("click", shotPosition)
 
 
 //trzeba znaleźć dobrą pozycję gdzie to wrzucić
-// viewfinder.style.animation = "weaponRotate 0.2s infinite linear alternate";
+// viewfinder.style.animation = "weaponRotate 0.2s 1 linear alternate";
