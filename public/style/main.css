@@ -69,9 +69,15 @@ button {
 }
 
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .container {
+  width: 2000px;
   height: 100vh;
   background-image: url(../assets/mainbackground.png);
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -80,15 +86,28 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 2px solid red;
 }
-body .progress {
+body .container .progress {
   margin-top: 5vh;
   height: 5vh;
   width: 600px;
   border-radius: 50px;
   background-color: rgba(7, 121, 41, 0.53);
 }
-body .progress .progress-done {
+@media screen and (min-width: 1260px) and (max-width: 2000px) {
+  body .container .progress {
+    position: absolute;
+    top: 20%;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1260px) {
+  body .container .progress {
+    position: absolute;
+    top: 23%;
+  }
+}
+body .container .progress .progress-done {
   height: 100%;
   width: 0;
   border-radius: 50px;
@@ -100,16 +119,19 @@ body .progress .progress-done {
   opacity: 0;
   transition: 1s ease;
 }
-body .main-game {
+body .container .main-game {
   width: 1000px;
-  height: 100vh;
+  height: auto;
   display: flex;
+  margin-top: auto;
+  margin-bottom: 0;
   align-items: flex-end;
   justify-content: center;
+  border: 2px solid red;
 }
-body .main-game .troll {
-  height: 900px;
-  width: 900px;
+body .container .main-game .troll {
+  height: 100%;
+  width: 100%;
   background-image: url(../assets/troll/walk/WALK000.png);
   background-size: cover;
   background-position: center;
@@ -118,57 +140,57 @@ body .main-game .troll {
   flex-direction: row;
   justify-content: center;
 }
-body .main-game .troll .col-1 {
+body .container .main-game .troll .col-1 {
   margin-left: 7%;
   height: 100%;
   width: 35%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  border: 2px solid green;
+  border: 2px solid red;
 }
-body .main-game .troll .col-1 .arm {
+body .container .main-game .troll .col-1 .arm {
   margin-top: 75%;
   height: 300px;
   width: 200px;
-  border: 2px solid green;
+  border: 2px solid red;
 }
-body .main-game .troll .col-2 {
+body .container .main-game .troll .col-2 {
   padding-top: 25%;
   height: 100%;
   width: 26%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 2px solid green;
+  border: 2px solid red;
 }
-body .main-game .troll .col-2 .head {
+body .container .main-game .troll .col-2 .head {
   height: 180px;
-  border: 2px solid green;
+  border: 2px solid red;
 }
-body .main-game .troll .col-2 .belly {
+body .container .main-game .troll .col-2 .belly {
   height: 300px;
-  border: 2px solid green;
+  border: 2px solid red;
 }
-body .main-game .troll .col-2 .leg {
+body .container .main-game .troll .col-2 .leg {
   height: 100px;
-  border: 2px solid green;
+  border: 2px solid red;
 }
-body .main-game .troll .col-3 {
+body .container .main-game .troll .col-3 {
   height: 100%;
   width: 35%;
+  border: 2px solid red;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border: 2px solid green;
 }
-body .main-game .troll .col-3 .arm {
+body .container .main-game .troll .col-3 .arm {
   margin-top: 85%;
   height: 250px;
   width: 150px;
-  border: 2px solid green;
+  border: 2px solid red;
 }
-body .main-game .troll .blood {
+body .container .main-game .troll .blood {
   position: absolute;
   top: 60%;
   background-image: url(../assets/blood.png);
@@ -178,14 +200,14 @@ body .main-game .troll .blood {
   transform: rotate(26deg);
   display: none;
 }
-body .main-game .score {
+body .container .main-game .score {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: fixed;
-  top: 2.5rem;
-  left: 13rem;
+  top: 3%;
+  left: 7%;
   padding: 10px;
   width: 450px;
   height: 200px;
@@ -193,72 +215,129 @@ body .main-game .score {
   background-size: 120%;
   background-position: center;
   background-repeat: no-repeat;
-  font-size: 35px;
+  font-size: 2rem;
   font-weight: 700;
 }
-body .main-game .score .score-number {
+@media screen and (min-width: 1260px) and (max-width: 2000px) {
+  body .container .main-game .score {
+    top: 5%;
+    left: 3%;
+    font-size: 1.5rem;
+    width: 300px;
+    height: 200px;
+    padding-top: 10px;
+    border: 2px solid green;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1260px) {
+  body .container .main-game .score {
+    top: 5%;
+    left: 3%;
+    font-size: 1.3rem;
+    width: 280px;
+    height: 200px;
+    padding-top: 20px;
+  }
+}
+body .container .main-game .score .score-number {
   margin-top: 10%;
   width: 150px;
   height: 80px;
   text-align: center;
 }
-body .main-game .score .info {
-  padding-top: 40px;
-  font-size: 16px;
+@media screen and (min-width: 1260px) and (max-width: 2000px) {
+  body .container .main-game .score .score-number {
+    margin-top: 10px;
+    height: 60px;
+    border: 2px solid green;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1260px) {
+  body .container .main-game .score .score-number {
+    margin-top: 10px;
+    height: 50px;
+    border: 2px solid green;
+  }
+}
+body .container .main-game .score .info {
+  padding-top: 2em;
+  font-size: 0.6em;
   font-weight: 300;
   color: #a96a13;
 }
-body .main-game .viewfinder {
+@media screen and (min-width: 1260px) and (max-width: 2000px) {
+  body .container .main-game .score .info {
+    padding-top: 0.5em;
+    border: 2px solid green;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1260px) {
+  body .container .main-game .score .info {
+    padding-top: 0.25em;
+    border: 2px solid green;
+  }
+}
+body .container .main-game .viewfinder {
   position: absolute;
+  top: 30%;
+  right: 10%;
   width: 140px;
   height: 160px;
   background-image: url(../assets/bron.png);
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  border: 1px solid red;
 }
-body .buttons {
+body .container .buttons {
   position: absolute;
-  top: 5vh;
-  right: 10vw;
-  border: 1px solid red;
+  top: 5%;
+  right: 3%;
 }
-body .buttons .btn {
-  font-size: 40px;
+@media screen and (min-width: 1260px) and (max-width: 2000px) {
+  body .container .buttons {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1260px) {
+  body .container .buttons {
+    display: flex;
+    flex-direction: column;
+  }
+}
+body .container .buttons .btn {
+  font-size: 2rem;
   font-family: sans-serif;
   border-radius: 30px;
   cursor: pointer;
-}
-body .buttons .btn:hover {
-  background-color: #77b977;
-}
-body .buttons .start {
-  height: 80px;
-  width: 200px;
-  background-image: url(../assets/start.png);
   background-size: 120%;
   background-position: center;
   background-repeat: no-repeat;
-}
-body .buttons .shot {
   height: 80px;
   width: 200px;
-  background-image: url(../assets/stop.png);
-  background-size: 120%;
-  background-position: center;
-  background-repeat: no-repeat;
+  margin-bottom: 10px;
 }
-body .buttons .shot:hover {
+@media screen and (min-width: 800px) and (max-width: 1260px) {
+  body .container .buttons .btn {
+    font-size: 26px;
+    height: 60px;
+    width: 160px;
+  }
+}
+body .container .buttons .start {
   background-image: url(../assets/start.png);
 }
-body .buttons .stop {
-  height: 80px;
-  width: 200px;
+body .container .buttons .shot {
   background-image: url(../assets/stop.png);
-  background-size: 120%;
-  background-position: center;
-  background-repeat: no-repeat;
+}
+body .container .buttons .shot:hover {
+  background-image: url(../assets/start.png);
+}
+body .container .buttons .stop {
+  background-image: url(../assets/stop.png);
+}
+body .container .buttons .stop:hover {
+  background-image: url(../assets/start.png);
 }
 
 @-webkit-keyframes move {

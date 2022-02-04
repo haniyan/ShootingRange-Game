@@ -24,7 +24,10 @@ const progressBar = document.querySelector(".progress");
 let score = 0;
 const lifeScore = 600;
 
-
+const viewfinderPosition = {
+    height: 160,
+    width: 140,
+}
 
 const headHitBoxPosition = {
     left: headHitBox.offsetLeft,
@@ -63,11 +66,9 @@ function shotPosition() {
     //position in the moment of function call
     let currentX = viewfinder.offsetLeft;
     let currentY = viewfinder.offsetTop;
-    console.log(currentX,currentY)
-    console.log(legHitBoxPosition.left,legHitBoxPosition.top)
     //head - collision detect
-    if (currentX < headHitBoxPosition.left + headHitBoxPosition.width && currentX > headHitBoxPosition.left
-        && currentY < headHitBoxPosition.top + headHitBoxPosition.height && currentY > headHitBoxPosition.top) {
+    if (currentX < headHitBoxPosition.left + headHitBoxPosition.width && currentX + viewfinderPosition.width > headHitBoxPosition.left
+        && currentY < headHitBoxPosition.top + headHitBoxPosition.height && currentY + viewfinderPosition.height > headHitBoxPosition.top) {
 
         score = score + 20;
         scoreNumberBox.innerHTML = `${score}`;
@@ -80,8 +81,8 @@ function shotPosition() {
     }
     //belly
 
-    else if (currentX < bellyHitBoxPosition.left + bellyHitBoxPosition.width && currentX > bellyHitBoxPosition.left
-        && currentY < bellyHitBoxPosition.top + bellyHitBoxPosition.height && currentY > bellyHitBoxPosition.top) {
+    else if (currentX < bellyHitBoxPosition.left + bellyHitBoxPosition.width && currentX + viewfinderPosition.width > bellyHitBoxPosition.left
+        && currentY < bellyHitBoxPosition.top + bellyHitBoxPosition.height && currentY + viewfinderPosition.height > bellyHitBoxPosition.top) {
 
         score = score + 5;
         scoreNumberBox.innerHTML = `${score}`;
@@ -92,8 +93,8 @@ function shotPosition() {
     }
     //leg
 
-    else if (currentX < legHitBoxPosition.left + legHitBoxPosition.width && currentX > legHitBoxPosition.left
-        && currentY < legHitBoxPosition.top + legHitBoxPosition.height && currentY > legHitBoxPosition.top) {
+    else if (currentX < legHitBoxPosition.left + legHitBoxPosition.width && currentX + viewfinderPosition.width > legHitBoxPosition.left
+        && currentY < legHitBoxPosition.top + legHitBoxPosition.height && currentY + viewfinderPosition.height > legHitBoxPosition.top) {
 
         score = score + 10;
         scoreNumberBox.innerHTML = `${score}`;
@@ -102,8 +103,8 @@ function shotPosition() {
         console.log("leg");
     }
     //leftarm
-    else if (currentX < leftArmHitBoxPosition.left + leftArmHitBoxPosition.width && currentX > leftArmHitBoxPosition.left
-        && currentY < leftArmHitBoxPosition.top + leftArmHitBoxPosition.height && currentY > leftArmHitBoxPosition.top) {
+    else if (currentX < leftArmHitBoxPosition.left + leftArmHitBoxPosition.width && currentX + viewfinderPosition.width > leftArmHitBoxPosition.left
+        && currentY < leftArmHitBoxPosition.top + leftArmHitBoxPosition.height && currentY + viewfinderPosition.height > leftArmHitBoxPosition.top) {
 
         score = score + 7;
         scoreNumberBox.innerHTML = `${score}`;
@@ -112,16 +113,15 @@ function shotPosition() {
         console.log("leftarm");
     }
     //rightarm
-    else if (currentX < rightArmHitBoxPosition.left + rightArmHitBoxPosition.width && currentX > rightArmHitBoxPosition.left
-        && currentY < rightArmHitBoxPosition.top + rightArmHitBoxPosition.height && currentY > rightArmHitBoxPosition.top) {
+    else if (currentX < rightArmHitBoxPosition.left + rightArmHitBoxPosition.width && currentX + viewfinderPosition.width > rightArmHitBoxPosition.left
+        && currentY < rightArmHitBoxPosition.top + rightArmHitBoxPosition.height && currentY + viewfinderPosition.height > rightArmHitBoxPosition.top) {
 
         score = score + 7;
         scoreNumberBox.innerHTML = `${score}`;
 
 
         console.log("rightarm");
-    }
-    else {
+    } else {
         showLoserMessage()
         console.log("looser");
     }
@@ -151,15 +151,13 @@ function checkLifeScore() {
         progressDone.style.width = score + 'px';
         progressDone.innerText = `${score}/${lifeScore}`;
 
-        if (score >= 100) {
+        if (score >= 50) {
 
             progressDone.style.fontSize = "1.5em";
             progressDone.style.opacity = 1;
         }
 
-    }
-
-    else {
+    } else {
         progressDone.style.width = lifeScore + 'px';
         progressDone.innerText = "WYGRANA!";
     }
@@ -169,30 +167,29 @@ function checkLifeScore() {
 function showBlood() {
     bloodDiv.style.display = "block";
 
-    setTimeout(()=>{
+    setTimeout(() => {
         bloodDiv.style.display = "none";
     }, 500)
 
 }
 
-function showLoserMessage(){
+function showLoserMessage() {
 
     let loserMessage = document.createElement("div");
     troll.appendChild(loserMessage);
-    loserMessage.style.backgroundImage= "url(../assets/ciapa.png)";
-    loserMessage.style.backgroundSize= "contain";
-    loserMessage.style.backgroundRepeat= "no-repeat";
+    loserMessage.style.backgroundImage = "url(../assets/ciapa.png)";
+    loserMessage.style.backgroundSize = "contain";
+    loserMessage.style.backgroundRepeat = "no-repeat";
     loserMessage.style.position = "absolute";
-    loserMessage.style.top= "38%";
-    loserMessage.style.left= "15%";
+    loserMessage.style.top = "38%";
+    loserMessage.style.left = "15%";
 
     loserMessage.style.width = "200px";
     loserMessage.style.height = "260px";
     loserMessage.style.zIndex = "2";
 
 
-
-    setTimeout(()=>{
+    setTimeout(() => {
         troll.removeChild(loserMessage)
 
     }, 500)
@@ -200,7 +197,7 @@ function showLoserMessage(){
 
 }
 
-function stopGame(){
+function stopGame() {
     progressDone.style.width = 0 + 'px';
     score = 0;
     progressDone.innerText = "0";
@@ -208,7 +205,7 @@ function stopGame(){
 }
 
 startBtn.addEventListener("click", () => {
-    // viewfinder.style.animation = "move 12s infinite linear alternate, moveTwo 20s infinite alternate"
+    viewfinder.style.animation = "move 8s infinite linear alternate, moveTwo 5s infinite alternate"
     troll.style.animation = "trollBasic 2s infinite linear alternate"
 
 })
@@ -221,13 +218,11 @@ stopBtn.addEventListener("click", () => {
 
 })
 
-shotBtn.addEventListener("click", ()=>{
+shotBtn.addEventListener("click", () => {
 
     shotPosition()
 
 })
-
-
 
 
 //trzeba znaleźć dobrą pozycję gdzie to wrzucić
