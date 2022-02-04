@@ -74,7 +74,7 @@ body {
   align-items: center;
 }
 body .container {
-  width: 2000px;
+  width: 1800px;
   height: 100vh;
   background-image: url(../assets/mainbackground.png);
   background-size: cover;
@@ -86,24 +86,27 @@ body .container {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid red;
 }
 body .container .progress {
-  margin-top: 5vh;
+  position: absolute;
+  top: 20vh;
   height: 5vh;
   width: 600px;
   border-radius: 50px;
   background-color: rgba(7, 121, 41, 0.53);
 }
-@media screen and (min-width: 1260px) and (max-width: 2000px) {
+@media screen and (min-width: 1260px) and (max-width: 1800px) {
   body .container .progress {
-    position: absolute;
     top: 20%;
   }
 }
-@media screen and (min-width: 800px) and (max-width: 1260px) {
+@media screen and (min-width: 1000px) and (max-width: 1260px) {
   body .container .progress {
-    position: absolute;
+    top: 23%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  body .container .progress {
     top: 23%;
   }
 }
@@ -127,7 +130,21 @@ body .container .main-game {
   margin-bottom: 0;
   align-items: flex-end;
   justify-content: center;
-  border: 2px solid red;
+}
+@media screen and (min-width: 1260px) and (max-width: 1600px) {
+  body .container .main-game {
+    width: 800px;
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1260px) {
+  body .container .main-game {
+    width: 600px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  body .container .main-game {
+    width: 550px;
+  }
 }
 body .container .main-game .troll {
   height: 100%;
@@ -141,64 +158,113 @@ body .container .main-game .troll {
   justify-content: center;
 }
 body .container .main-game .troll .col-1 {
-  margin-left: 7%;
+  margin-left: 24%;
   height: 100%;
-  width: 35%;
+  width: 25%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  border: 2px solid red;
+}
+@media screen and (min-width: 1000px) and (max-width: 1260px) {
+  body .container .main-game .troll .col-1 {
+    margin-left: 19%;
+    width: 25%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  body .container .main-game .troll .col-1 {
+    margin-left: 14%;
+    width: 23%;
+  }
 }
 body .container .main-game .troll .col-1 .arm {
   margin-top: 75%;
   height: 300px;
-  width: 200px;
-  border: 2px solid red;
+  width: 120px;
 }
 body .container .main-game .troll .col-2 {
   padding-top: 25%;
   height: 100%;
-  width: 26%;
+  width: 28%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 2px solid red;
+}
+@media screen and (min-width: 1000px) and (max-width: 1260px) {
+  body .container .main-game .troll .col-2 {
+    width: 36%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  body .container .main-game .troll .col-2 {
+    width: 42%;
+  }
 }
 body .container .main-game .troll .col-2 .head {
   height: 180px;
-  border: 2px solid red;
+}
+@media screen and (max-width: 1000px) {
+  body .container .main-game .troll .col-2 .head {
+    margin-top: 20%;
+    height: 140px;
+  }
 }
 body .container .main-game .troll .col-2 .belly {
-  height: 300px;
-  border: 2px solid red;
+  height: 200px;
 }
-body .container .main-game .troll .col-2 .leg {
-  height: 100px;
-  border: 2px solid red;
+body .container .main-game .troll .col-2 .ground {
+  margin-bottom: 2vh;
+  height: 50px;
 }
 body .container .main-game .troll .col-3 {
+  margin-right: 14%;
   height: 100%;
   width: 35%;
-  border: 2px solid red;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+@media screen and (min-width: 1000px) and (max-width: 1260px) {
+  body .container .main-game .troll .col-3 {
+    width: 28%;
+    margin-right: 8%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  body .container .main-game .troll .col-3 {
+    width: 22%;
+    margin-right: 12%;
+  }
 }
 body .container .main-game .troll .col-3 .arm {
   margin-top: 85%;
   height: 250px;
   width: 150px;
-  border: 2px solid red;
 }
 body .container .main-game .troll .blood {
   position: absolute;
   top: 60%;
   background-image: url(../assets/blood.png);
   width: 13vw;
-  height: 25vh;
+  height: 27vh;
   background-size: cover;
   transform: rotate(26deg);
   display: none;
+}
+@media screen and (min-width: 1000px) and (max-width: 1260px) {
+  body .container .main-game .troll .blood {
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+@media screen and (max-width: 1000px) {
+  body .container .main-game .troll .blood {
+    top: 63%;
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
 body .container .main-game .score {
   display: flex;
@@ -206,7 +272,7 @@ body .container .main-game .score {
   align-items: center;
   justify-content: center;
   position: fixed;
-  top: 3%;
+  top: 5%;
   left: 7%;
   padding: 10px;
   width: 450px;
@@ -218,20 +284,29 @@ body .container .main-game .score {
   font-size: 2rem;
   font-weight: 700;
 }
-@media screen and (min-width: 1260px) and (max-width: 2000px) {
+@media screen and (min-width: 1260px) and (max-width: 1800px) {
   body .container .main-game .score {
-    top: 5%;
+    top: 2%;
     left: 3%;
     font-size: 1.5rem;
     width: 300px;
     height: 200px;
     padding-top: 10px;
-    border: 2px solid green;
   }
 }
-@media screen and (min-width: 800px) and (max-width: 1260px) {
+@media screen and (min-width: 1000px) and (max-width: 1260px) {
   body .container .main-game .score {
-    top: 5%;
+    top: 2%;
+    left: 3%;
+    font-size: 1.3rem;
+    width: 280px;
+    height: 200px;
+    padding-top: 20px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  body .container .main-game .score {
+    top: 2%;
     left: 3%;
     font-size: 1.3rem;
     width: 280px;
@@ -245,18 +320,22 @@ body .container .main-game .score .score-number {
   height: 80px;
   text-align: center;
 }
-@media screen and (min-width: 1260px) and (max-width: 2000px) {
+@media screen and (min-width: 1260px) and (max-width: 1800px) {
   body .container .main-game .score .score-number {
     margin-top: 10px;
     height: 60px;
-    border: 2px solid green;
   }
 }
-@media screen and (min-width: 800px) and (max-width: 1260px) {
+@media screen and (min-width: 1000px) and (max-width: 1260px) {
   body .container .main-game .score .score-number {
     margin-top: 10px;
     height: 50px;
-    border: 2px solid green;
+  }
+}
+@media screen and (max-width: 1000px) {
+  body .container .main-game .score .score-number {
+    margin-top: 10px;
+    height: 50px;
   }
 }
 body .container .main-game .score .info {
@@ -265,44 +344,71 @@ body .container .main-game .score .info {
   font-weight: 300;
   color: #a96a13;
 }
-@media screen and (min-width: 1260px) and (max-width: 2000px) {
+@media screen and (min-width: 1260px) and (max-width: 1800px) {
   body .container .main-game .score .info {
     padding-top: 0.5em;
-    border: 2px solid green;
   }
 }
-@media screen and (min-width: 800px) and (max-width: 1260px) {
+@media screen and (min-width: 1000px) and (max-width: 1260px) {
   body .container .main-game .score .info {
     padding-top: 0.25em;
-    border: 2px solid green;
+  }
+}
+@media screen and (max-width: 1000px) {
+  body .container .main-game .score .info {
+    padding-top: 0.25em;
   }
 }
 body .container .main-game .viewfinder {
   position: absolute;
   top: 30%;
-  right: 10%;
+  right: 5%;
   width: 140px;
-  height: 160px;
+  height: 170px;
   background-image: url(../assets/bron.png);
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
+}
+@media screen and (min-width: 1260px) and (max-width: 1800px) {
+  body .container .main-game .viewfinder {
+    top: 40%;
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1260px) {
+  body .container .main-game .viewfinder {
+    width: 100px;
+    height: 140px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  body .container .main-game .viewfinder {
+    width: 90px;
+    height: 120px;
+  }
 }
 body .container .buttons {
   position: absolute;
   top: 5%;
   right: 3%;
 }
-@media screen and (min-width: 1260px) and (max-width: 2000px) {
+@media screen and (min-width: 1260px) and (max-width: 1800px) {
   body .container .buttons {
     display: flex;
     flex-direction: column;
   }
 }
-@media screen and (min-width: 800px) and (max-width: 1260px) {
+@media screen and (min-width: 1000px) and (max-width: 1260px) {
   body .container .buttons {
     display: flex;
     flex-direction: column;
+  }
+}
+@media screen and (max-width: 1000px) {
+  body .container .buttons {
+    top: 7%;
+    display: flex;
+    flex-direction: row;
   }
 }
 body .container .buttons .btn {
@@ -317,11 +423,18 @@ body .container .buttons .btn {
   width: 200px;
   margin-bottom: 10px;
 }
-@media screen and (min-width: 800px) and (max-width: 1260px) {
+@media screen and (min-width: 1000px) and (max-width: 1260px) {
   body .container .buttons .btn {
     font-size: 26px;
     height: 60px;
     width: 160px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  body .container .buttons .btn {
+    font-size: 1.5rem;
+    height: 50px;
+    width: 120px;
   }
 }
 body .container .buttons .start {

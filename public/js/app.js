@@ -12,7 +12,7 @@ const scoreNumberBox = document.querySelector(".score-number");
 
 const headHitBox = document.querySelector(".head");
 const bellyHitBox = document.querySelector(".belly");
-const legHitBox = document.querySelector(".leg");
+const legHitBox = document.querySelector(".ground");
 const leftArmHitBox = document.querySelector(".arm-left");
 const rightArmHitBox = document.querySelector(".arm-right");
 
@@ -41,7 +41,7 @@ const bellyHitBoxPosition = {
     width: 175,
     height: 200,
 }
-const legHitBoxPosition = {
+const groundHitBoxPosition = {
     left: legHitBox.offsetLeft,
     top: legHitBox.offsetTop,
     width: 175,
@@ -70,7 +70,7 @@ function shotPosition() {
     if (currentX < headHitBoxPosition.left + headHitBoxPosition.width && currentX + viewfinderPosition.width > headHitBoxPosition.left
         && currentY < headHitBoxPosition.top + headHitBoxPosition.height && currentY + viewfinderPosition.height > headHitBoxPosition.top) {
 
-        score = score + 20;
+        score = score + 10;
         scoreNumberBox.innerHTML = `${score}`;
 
         showBlood()
@@ -90,17 +90,6 @@ function shotPosition() {
         showBlood()
 
         console.log("belly");
-    }
-    //leg
-
-    else if (currentX < legHitBoxPosition.left + legHitBoxPosition.width && currentX + viewfinderPosition.width > legHitBoxPosition.left
-        && currentY < legHitBoxPosition.top + legHitBoxPosition.height && currentY + viewfinderPosition.height > legHitBoxPosition.top) {
-
-        score = score + 10;
-        scoreNumberBox.innerHTML = `${score}`;
-
-
-        console.log("leg");
     }
     //leftarm
     else if (currentX < leftArmHitBoxPosition.left + leftArmHitBoxPosition.width && currentX + viewfinderPosition.width > leftArmHitBoxPosition.left
@@ -159,6 +148,7 @@ function checkLifeScore() {
 
     } else {
         progressDone.style.width = lifeScore + 'px';
+        scoreNumberBox.innerHTML = "WYGRANA!";
         progressDone.innerText = "WYGRANA!";
     }
 
