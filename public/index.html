@@ -2,13 +2,22 @@
 <html lang="pl-PL">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Shooting Range Game</title>
     <link rel="stylesheet" href="style/main.css">
 </head>
 <body>
+
+<div class="blood"></div>
+
+<section class="progress">
+    <div class="progress-done"></div>
+</section>
+
 <section class="main-game">
+
     <div class="troll">
 
         <div class="col-1 hitbox">
@@ -19,25 +28,30 @@
             <div class="belly"></div>
             <div class="leg"></div>
         </div>
-      <div class="col-3 hitbox">
-          <div class="arm arm-right"></div>
-      </div>
-
-
+        <div class="col-3 hitbox">
+            <div class="arm arm-right"></div>
+        </div>
     </div>
-<button class="btn start">START</button>
-<button class="btn shot">STRZAL</button>
-<button class="btn stop">STOP</button>
-<div class="viewfinder"></div>
-<div class="score">ZDOBYTE PUNKTY
-<div class="score-number"></div>
-    <div class="info">All images credit craftpix.net</div>
-</div>
-<!--for tests-->
-<div id="status_div">&nbsp;</div>
+
+
+
+
+    <div class="viewfinder"></div>
+    <div class="score">ZDOBYTE PUNKTY
+        <div class="score-number"></div>
+        <div class="info">All images credit craftpix.net</div>
+    </div>
 
 
 </section>
+
+<section class="buttons">
+    <button class="btn start">START</button>
+    <button class="btn shot">STRZAL</button>
+    <button class="btn stop">STOP</button>
+
+</section>
+
 
 </body>
 

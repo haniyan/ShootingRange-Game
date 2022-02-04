@@ -1,5 +1,7 @@
 // adding reset
 @import "reset";
+//add mixins @media
+@import "mixins";
 
 body {
   height: 100vh;
@@ -10,9 +12,32 @@ body {
   overflow: hidden;
   position: relative;
   display: flex;
-
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 
+
+  .progress {
+    margin-top: 5vh;
+    height: 5vh;
+    width: 600px;
+    border-radius: 50px;
+    background-color: rgba(7, 121, 41, 0.53);
+
+    .progress-done {
+      height: 100%;
+      width: 0;
+      border-radius: 50px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to left, rgba(255, 77, 48, 0.54), rgba(185, 1, 1, 0.53));
+      opacity: 0;
+      transition: 1s ease;
+
+    }
+  }
 
   .main-game {
     width: 1000px;
@@ -46,8 +71,6 @@ body {
           margin-top: 75%;
           height: 300px;
           width: 200px;
-          border: 3px solid red;
-
         }
 
       }
@@ -62,23 +85,14 @@ body {
 
         .head {
           height: 180px;
-
-          border: 3px solid red;
         }
 
         .belly {
           height: 200px;
-
-          border: 3px solid red;
-
-
         }
 
         .leg {
           height: 100px;
-
-          border: 3px solid red;
-
         }
 
       }
@@ -95,8 +109,6 @@ body {
           margin-top: 85%;
           height: 250px;
           width: 150px;
-          border: 3px solid red;
-
         }
       }
 
@@ -151,10 +163,19 @@ body {
       background-size: 100%;
       background-position: center;
       background-repeat: no-repeat;
-      border: 2px solid #77b977;
-      //animation: move 4s infinite linear alternate, moveTwo 4s infinite alternate;
     }
 
+
+
+
+
+
+  }
+
+  .buttons{
+    height: 30vh;
+    width: 30vw;
+    border: 1px solid red;
     .btn {
 
       font-size: 40px;
@@ -183,7 +204,7 @@ body {
     .shot {
       height: 80px;
       width: 200px;
-      background-image: url(../assets/start.png);
+      background-image: url(../assets/stop.png);
       background-size: 120%;
       background-position: center;
       background-repeat: no-repeat;
@@ -193,7 +214,7 @@ body {
 
 
       &:hover {
-        background-image: url(../assets/stop.png);
+        background-image: url(../assets/start.png);
       }
     }
 
@@ -209,8 +230,14 @@ body {
       right: 200px;
     }
 
-
   }
+
+  //.blood {
+  //
+  //
+  //// do zrobienia pojawiajacy sie div z krwia w roznych lokalizacjach jak trafione (js)
+  //
+  //}
 
 
 }
@@ -510,6 +537,4 @@ body {
   100% {
     transform: rotate(-45deg);
   }
-
-
 }
