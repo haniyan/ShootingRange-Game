@@ -20,8 +20,10 @@ const rightArmHitBox = document.querySelector(".arm-right");
 const progressDone = document.querySelector(".progress-done");
 const progressBar = document.querySelector(".progress");
 
+
 let score = 0;
 const lifeScore = 600;
+
 
 
 const headHitBoxPosition = {
@@ -56,15 +58,13 @@ const rightArmHitBoxPosition = {
 }
 
 
-bloodDiv.style.display = "none";
-
-
 function shotPosition() {
 
     //position in the moment of function call
     let currentX = viewfinder.offsetLeft;
     let currentY = viewfinder.offsetTop;
-
+    console.log(currentX,currentY)
+    console.log(legHitBoxPosition.left,legHitBoxPosition.top)
     //head - collision detect
     if (currentX < headHitBoxPosition.left + headHitBoxPosition.width && currentX > headHitBoxPosition.left
         && currentY < headHitBoxPosition.top + headHitBoxPosition.height && currentY > headHitBoxPosition.top) {
@@ -98,7 +98,6 @@ function shotPosition() {
         score = score + 10;
         scoreNumberBox.innerHTML = `${score}`;
 
-        showBlood()
 
         console.log("leg");
     }
@@ -109,7 +108,6 @@ function shotPosition() {
         score = score + 7;
         scoreNumberBox.innerHTML = `${score}`;
 
-        showBlood()
 
         console.log("leftarm");
     }
@@ -120,17 +118,16 @@ function shotPosition() {
         score = score + 7;
         scoreNumberBox.innerHTML = `${score}`;
 
-        showBlood()
 
         console.log("rightarm");
     }
     else {
+        showLoserMessage()
         console.log("looser");
     }
 
     TrollIsDead()
     checkLifeScore()
-
 }
 
 function TrollIsDead() {
@@ -148,24 +145,6 @@ function TrollIsDead() {
 
 }
 
-
-startBtn.addEventListener("click", () => {
-    // viewfinder.style.animation = "move 12s infinite linear alternate, moveTwo 20s infinite alternate"
-    troll.style.animation = "trollBasic 2s infinite linear alternate"
-
-})
-
-stopBtn.addEventListener("click", () => {
-    viewfinder.style.animation = "paused";
-})
-
-shotBtn.addEventListener("click", shotPosition)
-
-
-//trzeba znaleźć dobrą pozycję gdzie to wrzucić
-// viewfinder.style.animation = "weaponRotate 0.2s 1 linear alternate";
-
-
 function checkLifeScore() {
     if (score < lifeScore) {
 
@@ -178,7 +157,9 @@ function checkLifeScore() {
             progressDone.style.opacity = 1;
         }
 
-    } else {
+    }
+
+    else {
         progressDone.style.width = lifeScore + 'px';
         progressDone.innerText = "WYGRANA!";
     }
@@ -186,7 +167,70 @@ function checkLifeScore() {
 }
 
 function showBlood() {
+    bloodDiv.style.display = "block";
 
-    bloodDiv.style.display = "block"
+    setTimeout(()=>{
+        bloodDiv.style.display = "none";
+    }, 500)
 
 }
+
+function showLoserMessage(){
+
+    let loserMessage = document.createElement("div");
+    troll.appendChild(loserMessage);
+    loserMessage.style.backgroundImage= "url(../assets/ciapa.png)";
+    loserMessage.style.backgroundSize= "contain";
+    loserMessage.style.backgroundRepeat= "no-repeat";
+    loserMessage.style.position = "absolute";
+    loserMessage.style.top= "38%";
+    loserMessage.style.left= "15%";
+
+    loserMessage.style.width = "200px";
+    loserMessage.style.height = "260px";
+    loserMessage.style.zIndex = "2";
+
+
+
+    setTimeout(()=>{
+        troll.removeChild(loserMessage)
+
+    }, 500)
+
+
+}
+
+function stopGame(){
+    progressDone.style.width = 0 + 'px';
+    score = 0;
+    progressDone.innerText = "0";
+    scoreNumberBox.innerHTML = "0";
+}
+
+startBtn.addEventListener("click", () => {
+    // viewfinder.style.animation = "move 12s infinite linear alternate, moveTwo 20s infinite alternate"
+    troll.style.animation = "trollBasic 2s infinite linear alternate"
+
+})
+
+stopBtn.addEventListener("click", () => {
+    viewfinder.style.animation = "paused";
+    troll.style.animation = "paused";
+
+    stopGame()
+
+})
+
+shotBtn.addEventListener("click", ()=>{
+
+    shotPosition()
+
+})
+
+
+
+
+//trzeba znaleźć dobrą pozycję gdzie to wrzucić
+// viewfinder.style.animation = "weaponRotate 0.2s 1 linear alternate";
+
+

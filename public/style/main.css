@@ -147,7 +147,7 @@ body .main-game .troll .col-2 .head {
   border: 2px solid green;
 }
 body .main-game .troll .col-2 .belly {
-  height: 200px;
+  height: 300px;
   border: 2px solid green;
 }
 body .main-game .troll .col-2 .leg {
@@ -176,6 +176,7 @@ body .main-game .troll .blood {
   height: 25vh;
   background-size: cover;
   transform: rotate(26deg);
+  display: none;
 }
 body .main-game .score {
   display: flex;
@@ -215,11 +216,12 @@ body .main-game .viewfinder {
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
+  border: 1px solid red;
 }
 body .buttons {
-  height: 30vh;
-  width: 30vw;
   position: absolute;
+  top: 5vh;
+  right: 10vw;
   border: 1px solid red;
 }
 body .buttons .btn {
@@ -238,9 +240,6 @@ body .buttons .start {
   background-size: 120%;
   background-position: center;
   background-repeat: no-repeat;
-  position: fixed;
-  bottom: 230px;
-  right: 200px;
 }
 body .buttons .shot {
   height: 80px;
@@ -249,9 +248,6 @@ body .buttons .shot {
   background-size: 120%;
   background-position: center;
   background-repeat: no-repeat;
-  position: fixed;
-  bottom: 130px;
-  right: 200px;
 }
 body .buttons .shot:hover {
   background-image: url(../assets/start.png);
@@ -263,9 +259,6 @@ body .buttons .stop {
   background-size: 120%;
   background-position: center;
   background-repeat: no-repeat;
-  position: fixed;
-  bottom: 30px;
-  right: 200px;
 }
 
 @-webkit-keyframes move {

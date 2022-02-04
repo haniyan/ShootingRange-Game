@@ -94,7 +94,7 @@ body {
         }
 
         .belly {
-          height: 200px;
+          height: 300px;
 
           border: 2px solid green;
         }
@@ -134,6 +134,7 @@ body {
         height: 25vh;
         background-size: cover;
         transform: rotate(26deg);
+        display: none;
 
 
         // do zrobienia pojawiajacy sie div z krwia w roznych lokalizacjach jak trafione (js)
@@ -190,15 +191,18 @@ body {
       background-size: 100%;
       background-position: center;
       background-repeat: no-repeat;
+      border: 1px solid red;
     }
 
 
   }
 
   .buttons {
-    height: 30vh;
-    width: 30vw;
+    //height: 30vh;
+    //width: 10vw;
     position: absolute;
+    top: 5vh;
+    right: 10vw;
     border: 1px solid red;
 
     .btn {
@@ -220,9 +224,9 @@ body {
       background-size: 120%;
       background-position: center;
       background-repeat: no-repeat;
-      position: fixed;
-      bottom: 230px;
-      right: 200px;
+      //position: fixed;
+      //bottom: 230px;
+      //right: 200px;
 
     }
 
@@ -233,9 +237,9 @@ body {
       background-size: 120%;
       background-position: center;
       background-repeat: no-repeat;
-      position: fixed;
-      bottom: 130px;
-      right: 200px;
+      //position: fixed;
+      //bottom: 130px;
+      //right: 200px;
 
 
       &:hover {
@@ -250,9 +254,9 @@ body {
       background-size: 120%;
       background-position: center;
       background-repeat: no-repeat;
-      position: fixed;
-      bottom: 30px;
-      right: 200px;
+      //position: fixed;
+      //bottom: 30px;
+      //right: 200px;
     }
 
   }
