@@ -190,12 +190,12 @@ function showLoserMessage() {
 function stopGame() {
     progressDone.style.width = 0 + 'px';
     score = 0;
-    progressDone.innerText = "0";
+    progressDone.innerText = "";
     scoreNumberBox.innerHTML = "0";
 }
 
 startBtn.addEventListener("click", () => {
-    viewfinder.style.animation = "move 8s infinite linear alternate, moveTwo 5s infinite alternate"
+    viewfinder.style.animation = "move 3.5s infinite linear alternate, moveTwo 3s infinite alternate"
     troll.style.animation = "trollBasic 2s infinite linear alternate"
 
 })
