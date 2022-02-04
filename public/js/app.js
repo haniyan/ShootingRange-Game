@@ -2,6 +2,7 @@
 
 const viewfinder = document.querySelector(".viewfinder");
 const troll = document.querySelector(".troll");
+const bloodDiv = document.querySelector(".blood");
 
 const startBtn = document.querySelector(".start");
 const stopBtn = document.querySelector(".stop");
@@ -55,6 +56,8 @@ const rightArmHitBoxPosition = {
 }
 
 
+bloodDiv.style.display = "none";
+
 
 function shotPosition() {
 
@@ -69,6 +72,8 @@ function shotPosition() {
         score = score + 20;
         scoreNumberBox.innerHTML = `${score}`;
 
+        showBlood()
+
         console.log("head");
 
 
@@ -81,6 +86,8 @@ function shotPosition() {
         score = score + 5;
         scoreNumberBox.innerHTML = `${score}`;
 
+        showBlood()
+
         console.log("belly");
     }
     //leg
@@ -90,6 +97,9 @@ function shotPosition() {
 
         score = score + 10;
         scoreNumberBox.innerHTML = `${score}`;
+
+        showBlood()
+
         console.log("leg");
     }
     //leftarm
@@ -98,14 +108,20 @@ function shotPosition() {
 
         score = score + 7;
         scoreNumberBox.innerHTML = `${score}`;
+
+        showBlood()
+
         console.log("leftarm");
     }
     //rightarm
-    else if(currentX < rightArmHitBoxPosition.left + rightArmHitBoxPosition.width && currentX > rightArmHitBoxPosition.left
-        && currentY < rightArmHitBoxPosition.top + rightArmHitBoxPosition.height && currentY > rightArmHitBoxPosition.top){
+    else if (currentX < rightArmHitBoxPosition.left + rightArmHitBoxPosition.width && currentX > rightArmHitBoxPosition.left
+        && currentY < rightArmHitBoxPosition.top + rightArmHitBoxPosition.height && currentY > rightArmHitBoxPosition.top) {
 
         score = score + 7;
         scoreNumberBox.innerHTML = `${score}`;
+
+        showBlood()
+
         console.log("rightarm");
     }
     else {
@@ -114,15 +130,16 @@ function shotPosition() {
 
     TrollIsDead()
     checkLifeScore()
+
 }
 
 function TrollIsDead() {
-    if (score>=lifeScore){
+    if (score >= lifeScore) {
         troll.style.animation = "trollDie 2s 1 linear alternate";
 
-        setTimeout(()=>{
+        setTimeout(() => {
             viewfinder.style.animation = "paused";
-            troll.style.animation ="paused"
+            troll.style.animation = "paused"
         }, 3000)
 
 
@@ -149,25 +166,27 @@ shotBtn.addEventListener("click", shotPosition)
 // viewfinder.style.animation = "weaponRotate 0.2s 1 linear alternate";
 
 
+function checkLifeScore() {
+    if (score < lifeScore) {
 
+        progressDone.style.width = score + 'px';
+        progressDone.innerText = `${score}/${lifeScore}`;
 
+        if (score >= 100) {
 
-function checkLifeScore(){
+            progressDone.style.fontSize = "1.5em";
+            progressDone.style.opacity = 1;
+        }
 
-if(score<=lifeScore){
-
-    progressDone.style.width = score + 'px';
-    progressDone.innerText = `${score}/${lifeScore}`;
-
-    if(score>=100){
-
-        progressDone.style.fontSize = "1.5em";
-        progressDone.style.opacity = 1;
+    } else {
+        progressDone.style.width = lifeScore + 'px';
+        progressDone.innerText = "WYGRANA!";
     }
 
 }
-else{
-    progressDone.innerText = "WYGRANA!";
-}
+
+function showBlood() {
+
+    bloodDiv.style.display = "block"
 
 }

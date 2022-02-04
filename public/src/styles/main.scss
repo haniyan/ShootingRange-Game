@@ -16,7 +16,6 @@ body {
   justify-content: center;
   align-items: center;
 
-
   .progress {
     margin-top: 5vh;
     height: 5vh;
@@ -67,10 +66,13 @@ body {
         justify-content: flex-end;
         align-items: center;
 
+        border: 2px solid green;
+
         .arm {
           margin-top: 75%;
           height: 300px;
           width: 200px;
+          border: 2px solid green;
         }
 
       }
@@ -83,16 +85,24 @@ body {
         flex-direction: column;
         justify-content: center;
 
+        border: 2px solid green;
+
         .head {
           height: 180px;
+
+          border: 2px solid green;
         }
 
         .belly {
           height: 200px;
+
+          border: 2px solid green;
         }
 
         .leg {
           height: 100px;
+
+          border: 2px solid green;
         }
 
       }
@@ -105,13 +115,30 @@ body {
         justify-content: flex-start;
         align-items: center;
 
+        border: 2px solid green;
+
         .arm {
           margin-top: 85%;
           height: 250px;
           width: 150px;
+
+          border: 2px solid green;
         }
       }
 
+      .blood {
+        position: absolute;
+        top: 60%;
+        background-image: url(../assets/blood.png);
+        width: 13vw;
+        height: 25vh;
+        background-size: cover;
+        transform: rotate(26deg);
+
+
+        // do zrobienia pojawiajacy sie div z krwia w roznych lokalizacjach jak trafione (js)
+
+      }
 
     }
 
@@ -166,16 +193,14 @@ body {
     }
 
 
-
-
-
-
   }
 
-  .buttons{
+  .buttons {
     height: 30vh;
     width: 30vw;
+    position: absolute;
     border: 1px solid red;
+
     .btn {
 
       font-size: 40px;
@@ -231,13 +256,6 @@ body {
     }
 
   }
-
-  //.blood {
-  //
-  //
-  //// do zrobienia pojawiajacy sie div z krwia w roznych lokalizacjach jak trafione (js)
-  //
-  //}
 
 
 }
