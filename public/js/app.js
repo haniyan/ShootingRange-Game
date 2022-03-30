@@ -1,5 +1,3 @@
-// wyszukiwanie diva
-
 const viewfinder = document.querySelector(".viewfinder");
 const troll = document.querySelector(".troll");
 const bloodDiv = document.querySelector(".blood");
@@ -167,7 +165,7 @@ function showLoserMessage() {
 
     let loserMessage = document.createElement("div");
     troll.appendChild(loserMessage);
-    loserMessage.style.backgroundImage = "url(../assets/ciapa.png)";
+    loserMessage.style.backgroundImage = "url(..public/assets/ciapa.png)";
     loserMessage.style.backgroundSize = "contain";
     loserMessage.style.backgroundRepeat = "no-repeat";
     loserMessage.style.position = "absolute";
@@ -214,8 +212,5 @@ shotBtn.addEventListener("click", () => {
 
 })
 
-
-//trzeba znaleźć dobrą pozycję gdzie to wrzucić
-// viewfinder.style.animation = "weaponRotate 0.2s 1 linear alternate";
 
 
