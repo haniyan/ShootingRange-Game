@@ -2,13 +2,13 @@
 
 Gra zbudowana za pomocą html, sass oraz javascript. 
 
-Przystosowana do ekranów o szerokości co najmniej 1000px.
+Brak wersji mobilnej (min width: 1000px)
 
 ----------------------------------
 
 Do dalszego doskonalenia pozostało: 
 
-1. dostosowanie wysokości wyświetlania
+1. responsywność wysokości ekranu, powiązanie z hitboxami
 
 2. ograniczenia czasowe kliknięć
 
